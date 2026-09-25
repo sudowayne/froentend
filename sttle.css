@@ -1,0 +1,108 @@
+/* css reset and box model */
+*,::before,::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    /* this just for the hero section to be in the center */
+}
+
+.site-header {
+    position:sticky;
+    top: 0;
+    background-color: rgba(15, 23, 42, 0.127);
+    /* backdrop-filter: blur(12px); */
+    border-bottom: 4px solid red;
+    /* z-index: 100; */
+    /* this just for the header to be in the center */
+}
+
+.nav-container {
+    display: flex;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    color: green;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #6f4caf;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: green;
+    font-size: 1.2rem;
+    /* border-bottom: 2px solid green; */
+}
+
+/* button and interactive element */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-size: 0.95rem;
+    border-radius: 10px;
+}
+
+
+.btn-primary {
+    background-color: red ;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: aqua;
+    color: black;
+    border-color: green;
+}
+
+.btn-secondary {
+    background-color: #6f4caf;
+    box-shadow: 10px 10px 20px rgba(31, 4, 234, 0.4);
+    border-color: #ed0707;
+}
+
+.btn-secondary:hover {
+    background-color: bisque;
+    color: aquamarine;
+}
+
+.btn-cta {
+    background-color: burlywood;
+    padding: 0.5rem 1rem;
+    border-radius: ;
+}
+
+
+

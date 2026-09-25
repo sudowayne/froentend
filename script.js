@@ -96,9 +96,10 @@ console.log(student?.address);
 // 3 ways to write funtion
 
 //1. funtion declation (Classic)
-function greet(name) {
+function greet(name)   {
     return "Welcome to CIH " + name + "!"
 }
+
 console.log(greet("wasiu"));
 console.log(greet('swain'));
 console.log(greet('ameen'));
@@ -116,6 +117,8 @@ const add = (num1, num2) => {
     return num1 + num2;
 }
 console.log(add(2, 20));
+
+
 
 //short arrow function  (one linear implicit return, no need for {} and return)
 const double = num => num * 2;
@@ -149,13 +152,96 @@ processStudent("ameen", sendWelcmoneMessage);
 processStudent("AbdulRauf", sendWelcmoneMessage);
 
 //setTimeOut = built-in callback function that excutes a function after a specified time interval
-console.log("order placed");
-setTimeout( () => {
-    console.log("suya is ready after 7 seconds");
-    
-},7000);
+// console.log("order placed");
+// setTimeout(()=>{
+// console.log("suya is ready after 7 seconds");
+// },9000);
+// console.log("doing other things while waiting");
 
-console.log("doing other things while waiting");
+
+//array
+const fruits = ["mango", "orange", "apple", "banana", "grapes", "kiwi"];
+console.log(fruits[5]);
+console.log(fruits.length);
+fruits.push("strawberry");
+console.log(fruits);
+fruits.pop();
+console.log(fruits);
+
+
+//for each
+const courses = ["Math", "Physics", "Computer Science", "Chemistry", "Biology"];
+
+courses.forEach((name,index) => {
+    console.log(`${index +1}. ${name}`);
+    
+})
+
+
+//map
+const numbers = [1,2,3,5]
+
+const doubles = numbers.map((num) => num * 2);
+console.log(doubles);
+console.log(numbers);
+
+//filter = returns a new array with all elements that pass the test implemented by the provided function
+const studentScores = [90, 85, 70, 65, 60, 55, 50];
+const passed = studentScores.filter((score) => score >= 60);
+console.log(passed);
+
+const studentName = ["wasiu", "ameen", "AbdulRauf"]
+const names = studentName.filter((n) => n.toLowerCase().startsWith("a"));
+console.log(names);
+//find
+// const students = ["wasiu", "ameen", "AbdulRauf"]
+// const studentqq = students.find((n) => n.toLowerCase().startsWith("a"));
+// console.log(studentqq);
+
+const food = [
+    {id: 1, name:"Rice", price: 2000},
+    {id: 2, name:"Beans", price: 1000},
+    {id: 3, name:"Yam", price: 3000},
+    {id: 4, name:"Plantain", price: 4000},
+    {id: 5, name:"Bread", price: 5000},
+]
+
+const mark = food.find((f)=> f.id === 20)
+console.log(mark);
+
+const noMark = food.find((f)=> f.id === 2)
+console.log(noMark);
+
+
+//spread operator
+const oldStudents = ["wasiu", "ameen", "AbdulRauf"];
+const newStudents = ["Wasiu", "ameen", "AbdulRauf", "Fatimah", "Hameed"];
+
+console.log(oldStudents);
+console.log(newStudents);
+
+//removing an item without mutating the array
+const withoutMark = oldStudents.filter((s) => s !== "wasiu")
+console.log(withoutMark);
+
+//rest operator
+const sum = (...nums) => {
+    return nums.reduce((total,num) => total + num, 0);
+}
+
+console.log(sum(1,2,3))
+console.log(sum(10,20,30,40));
+
+//`...` in function parameter = Rest (collect many into one aaray)
+//`...` in array/object = spread (unpack many into individual elements)
+
+
+
+
+
+
+
+
 
 
 
