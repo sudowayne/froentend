@@ -235,7 +235,105 @@ console.log(sum(10,20,30,40));
 //`...` in function parameter = Rest (collect many into one aaray)
 //`...` in array/object = spread (unpack many into individual elements)
 
+// another spread example
+const cars = ["toyota", "benz", "honda"]
+console.log(cars)
 
+const newCars = [...cars, "ferrari", "porch"]
+console.log(newCars);
+
+//object 
+const person = {
+    name: "Wasiu",
+    age: 25,
+    city: "Ibadan",
+    state: "Oyo",
+    country: "Nigeria",
+    occupation: "Student",
+    address: {
+        street: "123 Main St",
+        city: "Ibadan",
+        state: "Oyo",
+        zip: "123456"
+    }
+}
+
+
+
+//Acesss with dot notation
+
+console.log(person.name);
+console.log(person.address.street);
+
+//accesss with bracket notation(when key is dynamis or has specail chars)
+const key = "address"
+console.log(person[key]);
+
+
+// destructuring - unpacking the values from an array or properties from an object
+
+const {country, state, city} = person
+console.log(country);
+console.log(state);
+console.log(city);
+
+//renaming while destrcutting
+const {name: fullName, age: currentAge} = person
+console.log(fullName);
+
+//nested destrcuuring
+const {address: {city: homeCity}} = person
+console.log(homeCity);
+
+
+// default values
+const {phoneNum = "N/A"} = student
+console.log(phoneNum);
+
+//spread on object--- cloning and updating
+const updatePerson = {...person, age: 26, city: "osogbo", occupation: ""}
+
+console.log(updatePerson.age);
+
+//object utility method
+console.log(Object.keys(person)); //list all field names of an object
+console.log(Object.values(person)); //list all field values of an object
+console.log(Object.entries(person)); //list all key-value pairs of an object
+ 
+
+//array destructuring
+const colors = ["red", "green", "blue"];
+const [firstColor,secondColor, thirdColor] = colors;
+console.log(firstColor);
+console.log(secondColor);
+console.log(thirdColor);
+
+//skip items with commas
+const [ , ,fifthColor] = colors;
+console.log(fifthColor);
+
+
+//template literals and string method
+const newName = "saliu"
+const newAge = 25
+const newCouse = "computer scince"
+
+const oldWay = "welcome " + newName + " you are " + newAge + " years old and you are  a student of " + newCouse;
+console.log(oldWay);
+
+const newWay = `welcome ${newName}, you are ${newAge} years old and you are a student of ${newCouse}`
+console.log(newWay);
+
+//expression on template literals
+console.log(`next year will be ${newAge + 1}`);
+
+const card = `   
+naming: ${newName}
+age: ${newAge}
+course: ${newCouse}
+`;
+
+console.log(card);
 
 
 
