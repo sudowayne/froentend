@@ -336,9 +336,128 @@ course: ${newCouse}
 console.log(card);
 
 
+//html with template literal
+const studentHTML = `
+    <div>
+        <h2>${newName}</h2>
+        <p>Age: ${newAge}</p>
+        <p>Course: ${newCouse}</p>
+    </div>
+`;
+
+console.log(studentHTML);
+
+//string method
+const input = "     Hey Wasiu    " 
+
+console.log(input.toLowerCase());
+console.log(input.toUpperCase());
+console.log(input.includes("Wasiu"));
+console.log(input.trim());
+console.log(input.replace("Hey", "Hi"))
+
+
+//scope,closure and hoisting
+
+//block scoping
+const global = "i am visible everywhere";
+
+if(true){
+    const blockScope = "i am only visible in this block";
+    let seeMeHere = "i am visible in this block";
+    var youCantFindMe = "i am visible in this block";
+    console.log(blockScope);
+    console.log(global);   
+}
+
+// console.log(blockScope);
+// console.log(seeMeHere);
+console.log(youCantFindMe);
+
+
+//closure
+
+//lexical closure
+const createCount = () => {
+    let count = 0;
+    
+    return {
+        increment: () => count++,
+        decrement: () => count--,
+        logcount: () => console.log(`Count: ${count}`)
+    }
+}
+const counter = createCount();
+counter.logcount();
+counter.increment();
+counter.increment();
+counter.logcount();
+counter.decrement();
+counter.logcount();
 
 
 
+//hoisting
+//function declaration are hoisted
+sayHello();
+
+function sayHello() {
+    console.log("Hello");
+}
+
+//var is hoisted but not initialized
+var myVar = 10;
+console.log(myVar);
+
+
+//let and const are not hoisted
+// console.log(myLet);
+// let myLet = 20;
+
+// console.log(myConst);
+// const myConst = 30;
+
+//promises, asyn/await and fetch
+
+//promisses
+const cookFood = (dish) => {
+    return new Promise((resolve, reject) => {
+        console.log(`cooking ${dish}`)
+
+    setTimeout(() => {
+        if (dish === "suya") {
+            resolve(`${dish} is ready`);
+        } else {
+            reject(`${dish} is not ready`);
+        }
+    }, 2000);
+    })
+}
+
+// //using .then or .catch to handle promise
+
+// cookFood("suya")
+//     .then((result) => console.log(`success ${result}`))
+//     .catch((error) => console.log(`error ${error}`));
+
+// cookFood("rice")
+//     .then((result) => console.log(`success ${result}`))
+//     .catch((error) => console.log(`error ${error}`));
+
+//async/await
+
+const orderDinner = async () => {
+    try {
+        console.log("placing order")
+        const result = await cookFood("rice")
+        console.log(`success ${result}`)
+        console.log("eating dinner");
+    } catch (error) {
+        console.log(`error ${error}`);
+    }
+}
+
+orderDinner();  
 
 
 
