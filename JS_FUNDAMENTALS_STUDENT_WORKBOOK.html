@@ -219,7 +219,7 @@
       gap: 0.4rem;
     }
 
-    /* Break it & Fix it Box */
+    /* Try This Box */
     .break-it-box {
       background: #fffbeb;
       border: 1px dashed #f59e0b;
@@ -347,14 +347,14 @@
       <span class="badge badge-success">2026 Edition</span>
     </div>
     <h1>JavaScript Fundamentals</h1>
-    <p class="subtitle">Complete Student Workbook & Capstone Mini-Projects (Variables → Objects)</p>
+    <p class="subtitle">Complete Student Workbook & Capstone Mini-Projects (Variables to Objects)</p>
     <div class="notice-box">
-      <strong>🎯 INSTRUCTOR MANDATE:</strong> Study Modules 0 through 6 step-by-step. Type all code on your laptop and confirm outputs. At the end, <strong>choose either Assignment 1 or Assignment 2</strong> (or whichever project is assigned by your teacher) and build the complete program.
+      <strong>[INSTRUCTOR MANDATE]:</strong> Study Modules 0 through 6 step-by-step. Type all code on your laptop and confirm outputs. At the end, <strong>choose either Assignment 1 or Assignment 2</strong> (or the specific project assigned by your teacher) and build the complete program.
     </div>
   </div>
 
   <!-- Module 0 -->
-  <h2>🚀 Module 0: How to Run Code & See Results Instantly</h2>
+  <h2>Module 0: How to Run Code & See Results Instantly</h2>
   <p>To learn JavaScript, you must see your code run in real-time. Pick either <strong>Track A (Terminal)</strong> or <strong>Track B (Chrome Console)</strong>:</p>
 
   <div class="dual-grid">
@@ -363,11 +363,11 @@
       <ol>
         <li>Create a folder named <code>js-class</code> and open it in VS Code.</li>
         <li>Create a file named <code>app.js</code>.</li>
-        <li>Open terminal: Press <code>Ctrl + `</code>.</li>
+        <li>Open terminal: Press <code>Ctrl + ~</code>.</li>
         <li>Run your script anytime:
           <pre><code>node app.js</code></pre>
         </li>
-        <li>Output appears directly inside your terminal!</li>
+        <li>Output appears directly inside your terminal window.</li>
       </ol>
     </div>
 
@@ -380,310 +380,326 @@
         </li>
         <li>Open <code>index.html</code> in Chrome.</li>
         <li>Press <code>F12</code> &rarr; click <strong>Console</strong>.</li>
-        <li>Every time you save and refresh (<code>Ctrl + R</code>), output appears!</li>
+        <li>Every time you save and refresh (<code>Ctrl + R</code>), output appears.</li>
       </ol>
     </div>
   </div>
 
   <!-- Module 1 -->
-  <h2>📦 Module 1: Variables & Data Types</h2>
+  <h2>Module 1: Variables & Data Types</h2>
   <div class="mental-model">
-    <strong>💡 The Jar Analogy:</strong>
+    <strong>[The Storage Tin Analogy]:</strong>
     <ul>
-      <li><code>const</code> = <strong>Sealed Jar</strong>. Once you put data inside, you cannot reassign it. (Use 90% of the time).</li>
-      <li><code>let</code> = <strong>Open Jar</strong>. Contents can change (e.g. counters, scores, running totals).</li>
-      <li><code>var</code> = <strong>Old broken jar from 1995</strong>. Never use it in modern JavaScript.</li>
+      <li><code>const</code> = <strong>Sealed Tin</strong>. Once you put a label and value inside, you cannot reassign it. (Use this by default).</li>
+      <li><code>let</code> = <strong>Open Tin</strong>. Contents can change when things update (counters, balances, scores).</li>
+      <li><code>var</code> = <strong>Old rusty tin from 1995</strong>. Never use it in modern JavaScript.</li>
     </ul>
   </div>
 
   <pre><code>// ── 1. Declaring Variables ───────────────────
-const schoolName = "Apex Tech Academy"; // Sealed jar
-let studentCount = 30;                 // Open jar
+const schoolName = "Federal Tech University"; // Sealed tin — never changes
+let studentCount = 120;                       // Open tin — changes as students enroll
 
 console.log("School:", schoolName);
 console.log("Initial Students:", studentCount);
 
 // ── 2. Updating Variables ────────────────────
-studentCount = 35; // Allowed because it's 'let'
+studentCount = 125; // Allowed because it was declared with 'let'
 console.log("Updated Students:", studentCount);
 
 // ── 3. Checking Types ────────────────────────
 const studentAge = 21;
-const isEnrolled = true;
-const graduationYear = null;
+const isRegistered = true;
+const hostelRoom = null;
 
 console.log("Type of schoolName:", typeof schoolName);
 console.log("Type of studentAge:", typeof studentAge);
-console.log("Type of isEnrolled:", typeof isEnrolled);</code></pre>
+console.log("Type of isRegistered:", typeof isRegistered);</code></pre>
 
   <div class="output-box">
-    <div class="output-title">🖥️ Expected Terminal / Console Output:</div>School: Apex Tech Academy
-Initial Students: 30
-Updated Students: 35
+    <div class="output-title">[EXPECTED TERMINAL / CONSOLE OUTPUT]:</div>School: Federal Tech University
+Initial Students: 120
+Updated Students: 125
 Type of schoolName: string
 Type of studentAge: number
-Type of isEnrolled: boolean
+Type of isRegistered: boolean
   </div>
 
   <div class="break-it-box">
-    <strong>🧪 Break It & Fix It:</strong> Add <code>schoolName = "New Academy";</code> and run your file. Observe the red <code>TypeError: Assignment to constant variable</code>. This proves <code>const</code> protects your data.
+    <strong>[TRY THIS]:</strong> Add <code>schoolName = "New University";</code> and run your file. Observe the red <code>TypeError: Assignment to constant variable</code>. This proves <code>const</code> protects your data from accidental changes.
   </div>
 
   <!-- Module 2 -->
-  <h2>🚪 Module 2: Conditionals & Logical Operators</h2>
+  <h2>Module 2: Conditionals & Logical Operators</h2>
   <div class="mental-model">
-    <strong>💡 The Bouncer Analogy:</strong> Conditionals act like a nightclub security guard.
+    <strong>[The Security Guard Analogy]:</strong> Conditionals act like the security guard at an exam hall gate.
     <ul>
-      <li><code>if</code> = If you have a VIP ticket, walk in.</li>
-      <li><code>else if</code> = If you're on the regular guestlist, walk in.</li>
+      <li><code>if</code> = If you have your exam slip, walk inside.</li>
+      <li><code>else if</code> = If you have your student ID card, walk inside.</li>
       <li><code>else</code> = Otherwise, go home.</li>
       <li><code>&&</code> (AND): Both conditions must be true. | <code>||</code> (OR): At least one must be true.</li>
     </ul>
   </div>
 
   <pre><code>// ── 1. If / Else If / Else ───────────────────
-const score = 82;
+const examScore = 78;
 
-if (score >= 90) {
-  console.log("Grade: A - Outstanding!");
-} else if (score >= 75) {
-  console.log("Grade: B - Very Good!");
-} else if (score >= 50) {
-  console.log("Grade: C - Pass");
+if (examScore >= 75) {
+  console.log("Grade: A - Excellent");
+} else if (examScore >= 60) {
+  console.log("Grade: B - Very Good");
+} else if (examScore >= 50) {
+  console.log("Grade: C - Credit Pass");
 } else {
-  console.log("Grade: F - Try Again");
+  console.log("Grade: F - Carryover");
 }
 
 // ── 2. Logical Operators (&& and ||) ─────────
 const age = 19;
-const hasValidID = true;
+const hasNIN = true;
 
-if (age >= 18 && hasValidID) {
-  console.log("Access Granted: Welcome to the Exam Hall 🎓");
+if (age >= 18 && hasNIN) {
+  console.log("Voter Clearance: APPROVED to vote");
 } else {
-  console.log("Access Denied: Missing requirements ❌");
+  console.log("Voter Clearance: DISQUALIFIED (Must be 18+ and have NIN)");
 }
 
-// ── 3. Ternary Operator (One-Liner If/Else) ──
-const attendance = 85;
-const status = attendance >= 75 ? "ELIGIBLE" : "BARRED";
-console.log("Exam Clearance:", status);
+// ── 3. Ternary Operator (One-Liner) ─────────
+const attendanceRate = 80;
+const examClearance = attendanceRate >= 75 ? "CLEARED" : "BARRED";
+console.log("Exam Clearance Status:", examClearance);
 
 // ── 4. Nullish Coalescing (??) Fallback ─────
-const customNickname = null;
-const displayName = customNickname ?? "Student";
-console.log("Hello,", displayName);</code></pre>
+const middleName = null;
+const studentDisplayName = middleName ?? "No Middle Name";
+console.log("Middle Name Record:", studentDisplayName);</code></pre>
 
   <div class="output-box">
-    <div class="output-title">🖥️ Expected Terminal / Console Output:</div>Grade: B - Very Good!
-Access Granted: Welcome to the Exam Hall 🎓
-Exam Clearance: ELIGIBLE
-Hello, Student
+    <div class="output-title">[EXPECTED TERMINAL / CONSOLE OUTPUT]:</div>Grade: A - Excellent
+Voter Clearance: APPROVED to vote
+Exam Clearance Status: CLEARED
+Middle Name Record: No Middle Name
   </div>
 
   <!-- Module 3 -->
-  <h2>🍳 Module 3: Functions (The 3 Styles & Return Values)</h2>
+  <h2>Module 3: Functions (The 3 Styles & Return Values)</h2>
   <div class="mental-model">
-    <strong>💡 The Recipe Analogy:</strong> A function is a recipe card.
+    <strong>[The Cooking Recipe Analogy]:</strong> A function is a recipe for cooking food.
     <ul>
       <li><strong>Parameters:</strong> The ingredients passed in.</li>
-      <li><strong>Logic:</strong> The cooking process.</li>
-      <li><strong>Return:</strong> Serving the meal. If you omit <code>return</code>, JavaScript serves <code>undefined</code>!</li>
+      <li><strong>Function Body:</strong> The cooking process.</li>
+      <li><strong>Return:</strong> Serving the cooked food. If you omit <code>return</code>, you leave the kitchen with <code>undefined</code>!</li>
     </ul>
   </div>
 
   <pre><code>// ── 1. Function Declaration (Classic) ────────
-function calculateDiscount(price, discountPercent) {
-  const savings = (price * discountPercent) / 100;
-  return price - savings;
+function calculateDiscount(originalPrice, discountPercent) {
+  const savings = (originalPrice * discountPercent) / 100;
+  return originalPrice - savings;
 }
-console.log("Discounted Price:", calculateDiscount(100, 20));
+const promoPrice = calculateDiscount(10000, 15);
+console.log("Promo Price (Declaration): NGN", promoPrice);
 
 // ── 2. Function Expression ───────────────────
-const checkPass = function (mark) {
-  return mark >= 50 ? "PASS" : "FAIL";
+const verifyPassingGrade = function (score) {
+  return score >= 50 ? "PASSED" : "FAILED";
 };
-console.log("Exam Result:", checkPass(68));
+console.log("Result (Expression):", verifyPassingGrade(64));
 
-// ── 3. Modern Arrow Function (React Standard) 
-const formatInvoice = (customerName, total) => {
-  return `Receipt for ${customerName}: Total Due = $${total}`;
+// ── 3. Modern Arrow Function ─────────────────
+const generateReceiptLine = (customerName, amountPaid) => {
+  return `Payment confirmed for ${customerName}: NGN ${amountPaid}`;
 };
-console.log(formatInvoice("Ameen", 150));
+console.log(generateReceiptLine("Chinedu Okafor", 25000));
 
 // ── 4. Default Parameters ────────────────────
-const greetUser = (name = "Guest") => {
-  return `Welcome, ${name}!`;
+const greetStudent = (name = "Student") => {
+  return `Good morning, ${name}! Welcome to class.`;
 };
-console.log(greetUser());         // Uses default
-console.log(greetUser("Kemi"));   // Overrides default</code></pre>
+console.log(greetStudent());               // Uses default value "Student"
+console.log(greetStudent("Fatima Aliyu")); // Overrides default with "Fatima Aliyu"</code></pre>
 
   <div class="output-box">
-    <div class="output-title">🖥️ Expected Terminal / Console Output:</div>Discounted Price: 80
-Exam Result: PASS
-Receipt for Ameen: Total Due = $150
-Welcome, Guest!
-Welcome, Kemi!
+    <div class="output-title">[EXPECTED TERMINAL / CONSOLE OUTPUT]:</div>Promo Price (Declaration): NGN 8500
+Result (Expression): PASSED
+Payment confirmed for Chinedu Okafor: NGN 25000
+Good morning, Student! Welcome to class.
+Good morning, Fatima Aliyu! Welcome to class.
   </div>
 
   <!-- Module 4 -->
-  <h2>🏃 Module 4: Loops & Repetition</h2>
+  <h2>Module 4: Loops & Repetition</h2>
   <div class="mental-model">
-    <strong>💡 The Track Runner Analogy:</strong> If your coach says "do 5 laps", you don't build 5 tracks; you run the same track 5 times until the whistle blows.
+    <strong>[The ATM / Bus Conductor Analogy]:</strong> If an ATM needs to dispense five NGN 1000 notes, it repeats the dispensing action 5 times.
     <ul>
-      <li><code>for</code>: When you know the exact lap count.</li>
+      <li><code>for</code>: When you know the exact count in advance.</li>
       <li><code>while</code>: Keep running as long as a condition is true.</li>
       <li><code>for...of</code>: The modern way to visit every item in an array cleanly.</li>
       <li><code>break</code>: Emergency brake (stops the loop). | <code>continue</code>: Skip this single turn.</li>
     </ul>
   </div>
 
-  <pre><code>// ── 1. Classic for Loop (Counting Laps) ──────
-for (let lap = 1; lap <= 3; lap++) {
-  console.log(`Lap ${lap} completed 🏃`);
+  <pre><code>// ── 1. Classic for Loop (Counting Dispensed Notes) ──
+console.log("--- CLASSIC FOR LOOP ---");
+for (let note = 1; note <= 3; note++) {
+  console.log(`Dispensing NGN 1000 note ${note}`);
 }
 
-// ── 2. while Loop (Charging Battery) ─────────
-let battery = 85;
-while (battery < 100) {
-  battery += 5;
-  console.log(`Charging... Battery at ${battery}% 🔋`);
+// ── 2. while Loop (Charging Phone Battery) ─────────
+console.log("--- WHILE LOOP ---");
+let batteryPercent = 85;
+while (batteryPercent < 100) {
+  batteryPercent += 5;
+  console.log(`Charging... Battery now at ${batteryPercent}%`);
 }
-console.log("Battery Full! ⚡");
+console.log("Phone battery is fully charged");
 
-// ── 3. break & continue ─────────────────────
-for (let seat = 1; seat <= 4; seat++) {
-  if (seat === 2) {
-    console.log(`Seat ${seat} is RESERVED (skipping)`);
-    continue; // skips 2
+// ── 3. break and continue (Bus Passenger Check) ───
+console.log("--- BREAK & CONTINUE ---");
+for (let seatNumber = 1; seatNumber <= 5; seatNumber++) {
+  if (seatNumber === 2) {
+    console.log(`Seat ${seatNumber} is reserved (skipping)`);
+    continue; // Skips seat 2 and moves straight to seat 3
   }
-  console.log(`Passenger seated at Seat ${seat}`);
+  if (seatNumber === 4) {
+    console.log(`Seat ${seatNumber} occupied. Bus is now FULL (stopping)`);
+    break; // Stops the entire loop
+  }
+  console.log(`Passenger seated at Seat ${seatNumber}`);
 }
 
-// ── 4. Modern for...of Loop ─────────────────
-const courses = ["HTML", "CSS", "JavaScript", "React"];
-for (const course of courses) {
-  console.log("Enrolled in:", course);
+// ── 4. Modern for...of Loop ────────────────────────
+console.log("--- FOR...OF LOOP ---");
+const departments = ["Computer Science", "Accounting", "Biochemistry", "Mass Comm"];
+for (const dept of departments) {
+  console.log("Department:", dept);
 }</code></pre>
 
   <div class="output-box">
-    <div class="output-title">🖥️ Expected Terminal / Console Output:</div>Lap 1 completed 🏃
-Lap 2 completed 🏃
-Lap 3 completed 🏃
-Charging... Battery at 90% 🔋
-Charging... Battery at 95% 🔋
-Charging... Battery at 100% 🔋
-Battery Full! ⚡
+    <div class="output-title">[EXPECTED TERMINAL / CONSOLE OUTPUT]:</div>--- CLASSIC FOR LOOP ---
+Dispensing NGN 1000 note 1
+Dispensing NGN 1000 note 2
+Dispensing NGN 1000 note 3
+--- WHILE LOOP ---
+Charging... Battery now at 90%
+Charging... Battery now at 95%
+Charging... Battery now at 100%
+Phone battery is fully charged
+--- BREAK & CONTINUE ---
 Passenger seated at Seat 1
-Seat 2 is RESERVED (skipping)
+Seat 2 is reserved (skipping)
 Passenger seated at Seat 3
-Passenger seated at Seat 4
-Enrolled in: HTML
-Enrolled in: CSS
-Enrolled in: JavaScript
-Enrolled in: React
+Seat 4 occupied. Bus is now FULL (stopping)
+--- FOR...OF LOOP ---
+Department: Computer Science
+Department: Accounting
+Department: Biochemistry
+Department: Mass Comm
   </div>
 
   <!-- Module 5 -->
-  <h2>📚 Module 5: Arrays & The Big 4 Array Methods</h2>
+  <h2>Module 5: Arrays & The Big 4 Array Methods</h2>
   <div class="mental-model">
-    <strong>💡 The Numbered Shelf Analogy:</strong> Arrays start at <strong>index 0</strong>.
+    <strong>[The Supermarket Shelves Analogy]:</strong> Arrays start at <strong>index 0</strong>.
     <ul>
-      <li><code>.forEach()</code>: Visit each shelf and do something. (No return).</li>
-      <li><code>.map()</code>: Transform each item into a <strong>new array</strong>. (The King of React!).</li>
+      <li><code>.forEach()</code>: Visit each shelf and do something (no return).</li>
+      <li><code>.map()</code>: Transform each item into a <strong>new array</strong>.</li>
       <li><code>.filter()</code>: Keep only items that pass your test.</li>
       <li><code>.find()</code>: Return the <strong>first single match</strong>.</li>
     </ul>
   </div>
 
-  <pre><code>const scores = [45, 82, 95, 30, 68, 77];
+  <pre><code>const testScores = [45, 82, 95, 30, 68, 77];
 
 // 1. forEach — Log each item
-scores.forEach((score, index) => {
-  console.log(`Student ${index + 1}: ${score}`);
+testScores.forEach((score, index) => {
+  console.log(`Candidate ${index + 1}: ${score} marks`);
 });
 
-// 2. map — Curve scores by adding 5 bonus marks
-const curvedScores = scores.map((score) => score + 5);
-console.log("Curved Scores:", curvedScores);
+// 2. map — Add 5 bonus marks grace
+const boostedScores = testScores.map((score) => score + 5);
+console.log("Original Scores:", testScores);
+console.log("Boosted Scores:", boostedScores);
 
 // 3. filter — Keep only passing scores (>= 50)
-const passingScores = scores.filter((score) => score >= 50);
-console.log("Passing Scores:", passingScores);
+const passedCandidates = testScores.filter((score) => score >= 50);
+console.log("Passed Candidates:", passedCandidates);
 
-// 4. find — Grab the first distinction (>= 90)
-const distinction = scores.find((score) => score >= 90);
-console.log("First Distinction:", distinction);
+// 4. find — Locate first distinction (>= 90)
+const firstDistinction = testScores.find((score) => score >= 90);
+console.log("First Distinction Score:", firstDistinction);
 
 // 5. Spread Operator (...) — Copy without mutating
-const squadA = ["Ameen", "Kemi"];
-const squadB = [...squadA, "Tunde"];
-console.log("New Squad:", squadB);</code></pre>
+const mainCampus = ["Ikeja", "Yaba"];
+const allCampuses = [...mainCampus, "Lekki"];
+console.log("Campuses:", allCampuses);</code></pre>
 
   <div class="output-box">
-    <div class="output-title">🖥️ Expected Terminal / Console Output:</div>Student 1: 45
-Student 2: 82
-Student 3: 95
-Student 4: 30
-Student 5: 68
-Student 6: 77
-Curved Scores: [ 50, 87, 100, 35, 73, 82 ]
-Passing Scores: [ 82, 95, 68, 77 ]
-First Distinction: 95
-New Squad: [ 'Ameen', 'Kemi', 'Tunde' ]
+    <div class="output-title">[EXPECTED TERMINAL / CONSOLE OUTPUT]:</div>Candidate 1: 45 marks
+Candidate 2: 82 marks
+Candidate 3: 95 marks
+Candidate 4: 30 marks
+Candidate 5: 68 marks
+Candidate 6: 77 marks
+Original Scores: [ 45, 82, 95, 30, 68, 77 ]
+Boosted Scores: [ 50, 87, 100, 35, 73, 82 ]
+Passed Candidates: [ 82, 95, 68, 77 ]
+First Distinction Score: 95
+Campuses: [ 'Ikeja', 'Yaba', 'Lekki' ]
   </div>
 
   <!-- Module 6 -->
-  <h2>🪪 Module 6: Objects, Destructuring & Optional Chaining</h2>
+  <h2>Module 6: Objects, Destructuring & Optional Chaining</h2>
   <div class="mental-model">
-    <strong>💡 The Student ID Card Analogy:</strong> Objects store data in named key-value pairs.
+    <strong>[The Student ID Form Analogy]:</strong> Objects store data in named key-value pairs.
     <ul>
-      <li><strong>Destructuring:</strong> Unpack properties directly (<code>const { name, age } = student</code>).</li>
+      <li><strong>Destructuring:</strong> Unpack properties directly (<code>const { fullName, department } = student</code>).</li>
       <li><strong>Optional Chaining (<code>?.</code>):</strong> Safely access nested fields without crashing.</li>
-      <li><strong>Arrays of Objects:</strong> The industry-standard format for database and API data!</li>
+      <li><strong>Arrays of Objects:</strong> The industry-standard format for database and API records.</li>
     </ul>
   </div>
 
-  <pre><code>// ── 1. Object Literal ────────────────────────
+  <pre><code>// ── 1. Object Definition ─────────────────────
 const student = {
   id: 101,
-  name: "Ameen Wasiu",
+  fullName: "Tunde Bakare",
   age: 22,
-  course: "Fullstack Engineering",
-  contact: { email: "ameen@apextech.com", phone: null }
+  department: "Software Engineering",
+  contact: { email: "tunde.bakare@campus.edu", phone: null },
+  isCleared: true
 };
 
 // ── 2. Destructuring ─────────────────────────
-const { name, course } = student;
-console.log(`Student ${name} is enrolled in ${course}`);
+const { fullName, age, department } = student;
+console.log(`Profile: ${fullName} (${age} years old) - Department of ${department}`);
 
 // ── 3. Optional Chaining (?.) & Fallback (??) 
-const city = student.address?.city ?? "City Not Specified";
-console.log("Location:", city);
+const residentState = student.address?.state ?? "State Not Provided";
+console.log("State of Residence:", residentState);
 
 // ── 4. Arrays of Objects ─────────────────────
-const students = [
-  { id: 1, name: "Ameen", score: 85, active: true },
-  { id: 2, name: "Kemi", score: 92, active: true },
-  { id: 3, name: "John", score: 40, active: false }
+const studentRecords = [
+  { id: 1, name: "Tunde", score: 85, feePaid: true },
+  { id: 2, name: "Amina", score: 92, feePaid: true },
+  { id: 3, name: "Emeka", score: 42, feePaid: false }
 ];
 
-const activePassed = students.filter((s) => s.active && s.score >= 50);
-console.log("Active Passed Count:", activePassed.length);
+const clearedStudents = studentRecords.filter((s) => s.feePaid && s.score >= 50);
+console.log("Cleared Students Count:", clearedStudents.length);
 
-const foundStudent = students.find((s) => s.id === 2);
-console.log("Found Student Name:", foundStudent?.name);</code></pre>
+const selectedStudent = studentRecords.find((s) => s.id === 2);
+console.log("Found Student Name:", selectedStudent?.name);</code></pre>
 
   <div class="output-box">
-    <div class="output-title">🖥️ Expected Terminal / Console Output:</div>Student Ameen Wasiu is enrolled in Fullstack Engineering
-Location: City Not Specified
-Active Passed Count: 2
-Found Student Name: Kemi
+    <div class="output-title">[EXPECTED TERMINAL / CONSOLE OUTPUT]:</div>Profile: Tunde Bakare (22 years old) - Department of Software Engineering
+State of Residence: State Not Provided
+Cleared Students Count: 2
+Found Student Name: Amina
   </div>
 
   <!-- Module 7 Capstones -->
   <div style="page-break-before: always;"></div>
-  <h2>🏆 Module 7: The 6 Capstone Project Assignments</h2>
+  <h2>Module 7: The 6 Capstone Project Assignments</h2>
   <p><strong>Student Instructions:</strong> Choose <strong>either Assignment 1 or Assignment 2</strong> (or the specific project your instructor assigns). Complete all tasks in a single file (<code>assignment.js</code>), run it with <code>node assignment.js</code> or in Chrome Console, and confirm your output matches the expected report.</p>
 
   <!-- Project 1 -->
@@ -696,59 +712,59 @@ Found Student Name: Kemi
       <span class="badge badge-warning">100 Marks</span>
     </div>
 
-    <p><strong>Scenario:</strong> You are building the checkout and billing engine for <strong>"Apex Gadgets"</strong>. You must filter out out-of-stock items, calculate item subtotals with discounts, apply VIP rules, compute VAT/shipping, and print an itemized checkout invoice.</p>
+    <p><strong>Scenario:</strong> You are developing the checkout and billing engine for <strong>"Apex Gadgets Store"</strong> in Lagos. You must filter out out-of-stock items, calculate item subtotals with discounts, apply VIP customer perks, calculate delivery fees to different Nigerian cities, and print an itemized checkout receipt.</p>
 
     <h4>Starter Dataset:</h4>
     <pre><code>const cart = [
-  { id: "P101", name: "Wireless Mechanical Keyboard", category: "Hardware", price: 120, quantity: 2, inStock: true, discountRate: 10 },
-  { id: "P102", name: "Ergonomic Gaming Mouse", category: "Hardware", price: 60, quantity: 1, inStock: true, discountRate: 0 },
-  { id: "P103", name: "USB-C Fast Charging Cable", category: "Accessories", price: 25, quantity: 4, inStock: true, discountRate: 15 },
-  { id: "P104", name: "Ultra-Wide Monitor 34\"", category: "Screens", price: 450, quantity: 1, inStock: false, discountRate: 5 }, // Out of stock!
-  { id: "P105", name: "Bluetooth Noise-Canceling Headset", category: "Audio", price: 180, quantity: 1, inStock: true, discountRate: 20 },
-  { id: "P106", name: "Microfiber Cleaning Kit", category: "Accessories", price: 15, quantity: 2, inStock: true, discountRate: 0 }
+  { id: "P101", name: "Wireless Mechanical Keyboard", category: "Hardware", price: 65000, quantity: 2, inStock: true, discountRate: 10 },
+  { id: "P102", name: "Ergonomic Optical Mouse", category: "Hardware", price: 18000, quantity: 1, inStock: true, discountRate: 0 },
+  { id: "P103", name: "Type-C Fast Charging Cable", category: "Accessories", price: 6000, quantity: 4, inStock: true, discountRate: 15 },
+  { id: "P104", name: "Ultra-Wide Monitor 34-Inch", category: "Screens", price: 380000, quantity: 1, inStock: false, discountRate: 5 }, // Out of stock!
+  { id: "P105", name: "Noise-Canceling Wireless Headset", category: "Audio", price: 95000, quantity: 1, inStock: true, discountRate: 20 },
+  { id: "P106", name: "Screen Cleaning Cloth", category: "Accessories", price: 3500, quantity: 2, inStock: true, discountRate: 0 }
 ];
 
 const customer = {
   name: "Zainab Bello",
   isVIP: true,
-  shippingAddress: { city: "Abuja", country: "Nigeria" }
+  shippingAddress: { city: "Abuja", state: "FCT" }
 };</code></pre>
 
     <h4>Tasks to Complete:</h4>
     <ol>
-      <li><strong>Filter Available Items (<code>.filter</code>):</strong> Filter out out-of-stock items (<code>inStock === false</code>). Log an alert for each removed item.</li>
+      <li><strong>Filter Available Items (<code>.filter</code>):</strong> Filter out out-of-stock items (<code>inStock === false</code>). Log a notice for each removed item.</li>
       <li><strong>Item Subtotal Calculator (Arrow Function):</strong> Write <code>calculateItemSubtotal(item)</code> calculating raw total, discount savings, and net subtotal.</li>
       <li><strong>Itemized Receipt Loop (<code>for...of</code> + Destructuring):</strong> Loop through valid items, destructure <code>{ name, price, quantity, discountRate }</code>, and print itemized lines.</li>
-      <li><strong>VIP & Loyalty Discount (Conditionals):</strong> If <code>customer.isVIP === true</code> and total > $300, deduct an extra 10% loyalty discount.</li>
-      <li><strong>Tax & Delivery (Ternary + <code>??</code>):</strong> Add 7.5% VAT. If city is "Abuja", shipping is $10, otherwise $25 (use <code>??</code> fallback).</li>
+      <li><strong>VIP & Loyalty Discount (Conditionals):</strong> If <code>customer.isVIP === true</code> and total > NGN 200,000, deduct an extra 10% loyalty discount.</li>
+      <li><strong>Tax & Delivery (Ternary + <code>??</code>):</strong> Add 7.5% VAT. If city is "Lagos", shipping is NGN 3000; if "Abuja", NGN 6000; default to NGN 9000 (use <code>??</code>).</li>
       <li><strong>Product Search (<code>.find</code>):</strong> Find product <code>"P105"</code> and log its availability.</li>
     </ol>
 
     <div class="output-box">
-<div class="output-title">🖥️ Target Console Output:</div>==================================================
-        APEX GADGETS - CHECKOUT INVOICE
+<div class="output-title">[TARGET CONSOLE OUTPUT]:</div>==================================================
+        APEX GADGETS STORE - CHECKOUT INVOICE
 ==================================================
-Customer: Zainab Bello (VIP Member: Yes)
-Destination: Abuja
+Customer: Zainab Bello (VIP Status: YES)
+Delivery City: Abuja
 
-⚠️ Alert: Out of stock removed: Ultra-Wide Monitor 34"
+[NOTICE] Out of stock item removed: Ultra-Wide Monitor 34-Inch
 
 --- ITEMIZED ORDER ---
-- Wireless Mechanical Keyboard | Qty: 2 x $120 | Disc: 10% -> Subtotal: $216.00
-- Ergonomic Gaming Mouse | Qty: 1 x $60 | Disc: 0% -> Subtotal: $60.00
-- USB-C Fast Charging Cable | Qty: 4 x $25 | Disc: 15% -> Subtotal: $85.00
-- Bluetooth Noise-Canceling Headset | Qty: 1 x $180 | Disc: 20% -> Subtotal: $144.00
-- Microfiber Cleaning Kit | Qty: 2 x $15 | Disc: 0% -> Subtotal: $30.00
+- Wireless Mechanical Keyboard | Qty: 2 x NGN 65000 | Disc: 10% -> Subtotal: NGN 117000.00
+- Ergonomic Optical Mouse | Qty: 1 x NGN 18000 | Disc: 0% -> Subtotal: NGN 18000.00
+- Type-C Fast Charging Cable | Qty: 4 x NGN 6000 | Disc: 15% -> Subtotal: NGN 20400.00
+- Noise-Canceling Wireless Headset | Qty: 1 x NGN 95000 | Disc: 20% -> Subtotal: NGN 76000.00
+- Screen Cleaning Cloth | Qty: 2 x NGN 3500 | Disc: 0% -> Subtotal: NGN 7000.00
 
 --- ORDER FINANCIALS ---
-Raw Subtotal:        $535.00
-VIP Loyalty Saved:   $53.50 (10% applied)
-Tax (7.5% VAT):      $36.11
-Delivery Fee:        $10.00
+Raw Subtotal:        NGN 238400.00
+VIP Loyalty Saved:   NGN 23840.00 (10% applied)
+VAT (7.5%):          NGN 16092.00
+Delivery Fee:        NGN 6000.00
 --------------------------------------------------
-GRAND TOTAL DUE:     $527.61
+GRAND TOTAL DUE:     NGN 236652.00
 ==================================================
-Product Lookup [P105]: Bluetooth Noise-Canceling Headset ($180) - In Stock!
+Product Search [P105]: Noise-Canceling Wireless Headset (NGN 95000) - In Stock
 ==================================================</div>
   </div>
 
@@ -757,12 +773,12 @@ Product Lookup [P105]: Bluetooth Noise-Canceling Headset ($180) - In Stock!
     <div class="project-header">
       <div>
         <div class="badge badge-success">Academic</div>
-        <div class="project-title">Project 2: School Academic Portal & Grade Auditor</div>
+        <div class="project-title">Project 2: Tertiary Institution Academic & Clearance Portal</div>
       </div>
       <span class="badge badge-warning">100 Marks</span>
     </div>
 
-    <p><strong>Scenario:</strong> You are developing the graduation clearance and honor roll auditing engine for <strong>"Lagos Institute of Technology"</strong>. Calculate weighted averages, assign honors grades, check administrative clearance, and detect students needing intervention.</p>
+    <p><strong>Scenario:</strong> You are developing the graduation clearance and honor roll auditing engine for <strong>"Lagos Institute of Technology"</strong>. Calculate weighted averages, assign honours classifications, verify administrative clearance, and detect students needing intervention.</p>
 
     <h4>Starter Dataset:</h4>
     <pre><code>const cohort = [
@@ -776,7 +792,7 @@ Product Lookup [P105]: Bluetooth Noise-Canceling Headset ($180) - In Stock!
 
     <h4>Tasks to Complete:</h4>
     <ol>
-      <li><strong>Average & Grade Calculator (Arrow Function):</strong> Compute average score and assign grade (A, B, C, D, F) using <code>if / else if</code>.</li>
+      <li><strong>Average & Grade Calculator (Arrow Function):</strong> Compute average score and assign class (First Class, Second Class Upper, Second Class Lower, etc.) using <code>if / else if</code>.</li>
       <li><strong>Clearance Check (<code>&&</code>, <code>!</code>):</strong> Cleared if <code>tuitionCleared && attendancePercent >= 75 && !disciplinaryIssues</code>.</li>
       <li><strong>Filter Honor Roll (<code>.filter</code>):</strong> Extract students with average >= 85 who are CLEARED.</li>
       <li><strong>Honor Roll Cards (<code>.map</code>):</strong> Format honor roll student cards.</li>
@@ -785,25 +801,25 @@ Product Lookup [P105]: Bluetooth Noise-Canceling Headset ($180) - In Stock!
     </ol>
 
     <div class="output-box">
-<div class="output-title">🖥️ Target Console Output:</div>==================================================
+<div class="output-title">[TARGET CONSOLE OUTPUT]:</div>==================================================
    LAGOS INSTITUTE OF TECHNOLOGY - ACADEMIC AUDIT
 ==================================================
 Total Students Evaluated: 6
 
 --- STUDENT ACADEMIC BREAKDOWN ---
-[ST-01] Chinedu Okafor | Avg: 88.75% | Grade: B - Second Class Upper | Clearance: CLEARED
-[ST-02] Fatima Aliyu | Avg: 68.75% | Grade: C - Second Class Lower | Clearance: CLEARED
-[ST-03] David Adeleke | Avg: 43.75% | Grade: F - Fail | Clearance: BLOCKED
-⚠️  PROBATION ALERT: David Adeleke placed on Academic Probation!
-[ST-04] Blessing Johnson | Avg: 94.75% | Grade: A - First Class | Clearance: CLEARED
-[ST-05] Emmanuel Victor | Avg: 81.25% | Grade: B - Second Class Upper | Clearance: BLOCKED (Low Attendance & Tuition Owed)
-[ST-06] Grace Danjuma | Avg: 87.50% | Grade: B - Second Class Upper | Clearance: BLOCKED (Disciplinary Sanction)
+[ST-01] Chinedu Okafor | Avg: 88.75% | Class: Second Class Upper | Clearance: CLEARED
+[ST-02] Fatima Aliyu | Avg: 68.75% | Class: Second Class Lower | Clearance: CLEARED
+[ST-03] David Adeleke | Avg: 43.75% | Class: Academic Probation | Clearance: BLOCKED
+[PROBATION NOTICE] David Adeleke placed on Academic Probation
+[ST-04] Blessing Johnson | Avg: 94.75% | Class: First Class | Clearance: CLEARED
+[ST-05] Emmanuel Victor | Avg: 81.25% | Class: Second Class Upper | Clearance: BLOCKED
+[ST-06] Grace Danjuma | Avg: 87.50% | Class: Second Class Upper | Clearance: BLOCKED
 
---- 🏆 GRADUATION HONOR ROLL ---
+--- GRADUATION HONOR ROLL ---
 1. Blessing Johnson (Avg: 94.75% - First Class)
 2. Chinedu Okafor (Avg: 88.75% - Second Class Upper)
 
-Valedictorian: Blessing Johnson with an average of 94.75%!
+Valedictorian: Blessing Johnson with an outstanding average of 94.75%!
 ==================================================
 Verified Student [ST-04]: Blessing Johnson | Sponsor: State Grant
 ==================================================</div>
@@ -814,12 +830,12 @@ Verified Student [ST-04]: Blessing Johnson | Sponsor: State Grant
     <div class="project-header">
       <div>
         <div class="badge badge-primary">Fintech</div>
-        <div class="project-title">Project 3: Digital Banking & Multi-Transaction Ledger</div>
+        <div class="project-title">Project 3: Mobile Money & Transaction Ledger</div>
       </div>
       <span class="badge badge-warning">100 Marks</span>
     </div>
-    <p><strong>Scenario:</strong> Process transaction queues for <strong>"SafeVault Digital Bank"</strong>. Handle limits, overdraft checks, penalty fees, filter categories, and print a bank statement.</p>
-    <p><em>(Refer to [JS_FUNDAMENTALS_STUDENT_WORKBOOK.md] for full starter data and step-by-step instructions).</em></p>
+    <p><strong>Scenario:</strong> Process transaction queues for <strong>"SafePay Mobile Money"</strong>. Handle limits, overdraft checks, penalty fees, filter categories, and print a bank statement.</p>
+    <p><em>(Refer to JS_FUNDAMENTALS_STUDENT_WORKBOOK.md for full starter data and step-by-step instructions).</em></p>
   </div>
 
   <!-- Project 4 -->
@@ -827,12 +843,12 @@ Verified Student [ST-04]: Blessing Johnson | Sponsor: State Grant
     <div class="project-header">
       <div>
         <div class="badge badge-danger">Healthcare</div>
-        <div class="project-title">Project 4: Hospital Triage & Patient Billing System</div>
+        <div class="project-title">Project 4: General Hospital Triage & Billing System</div>
       </div>
       <span class="badge badge-warning">100 Marks</span>
     </div>
-    <p><strong>Scenario:</strong> Prioritize ER emergency patients at <strong>"St. Jude Metropolitan Hospital"</strong>, compute insurance copay deductions, and output shift handover reports.</p>
-    <p><em>(Refer to [JS_FUNDAMENTALS_STUDENT_WORKBOOK.md] for full starter data and step-by-step instructions).</em></p>
+    <p><strong>Scenario:</strong> Prioritize ER emergency patients at <strong>"St. Jude General Hospital"</strong>, compute insurance copay deductions, and output shift handover reports.</p>
+    <p><em>(Refer to JS_FUNDAMENTALS_STUDENT_WORKBOOK.md for full starter data and step-by-step instructions).</em></p>
   </div>
 
   <!-- Project 5 -->
@@ -840,12 +856,12 @@ Verified Student [ST-04]: Blessing Johnson | Sponsor: State Grant
     <div class="project-header">
       <div>
         <div class="badge badge-secondary">Logistics</div>
-        <div class="project-title">Project 5: Logistics & Delivery Fleet Dispatcher</div>
+        <div class="project-title">Project 5: Interstate Logistics & Fleet Dispatcher</div>
       </div>
       <span class="badge badge-warning">100 Marks</span>
     </div>
     <p><strong>Scenario:</strong> Load cargo packages onto a van with a 100 kg weight limit using <code>for...of</code> and <code>break</code>, sort express parcels, and calculate freight revenue.</p>
-    <p><em>(Refer to [JS_FUNDAMENTALS_STUDENT_WORKBOOK.md] for full starter data and step-by-step instructions).</em></p>
+    <p><em>(Refer to JS_FUNDAMENTALS_STUDENT_WORKBOOK.md for full starter data and step-by-step instructions).</em></p>
   </div>
 
   <!-- Project 6 -->
@@ -853,16 +869,16 @@ Verified Student [ST-04]: Blessing Johnson | Sponsor: State Grant
     <div class="project-header">
       <div>
         <div class="badge badge-success">Fitness</div>
-        <div class="project-title">Project 6: Gym Membership & Fitness Tracker</div>
+        <div class="project-title">Project 6: Fitness Club Membership & Attendance Tracker</div>
       </div>
       <span class="badge badge-warning">100 Marks</span>
     </div>
     <p><strong>Scenario:</strong> Calculate monthly renewal fees, loyalty discounts, personal trainer fees, and award attendance streak badges for <strong>"IronPulse Fitness Club"</strong>.</p>
-    <p><em>(Refer to [JS_FUNDAMENTALS_STUDENT_WORKBOOK.md] for full starter data and step-by-step instructions).</em></p>
+    <p><em>(Refer to JS_FUNDAMENTALS_STUDENT_WORKBOOK.md for full starter data and step-by-step instructions).</em></p>
   </div>
 
   <!-- Grading Rubric Table -->
-  <h2>📊 Universal Grading Rubric (100 Marks Total)</h2>
+  <h2>Universal Grading Rubric (100 Marks Total)</h2>
   <table>
     <thead>
       <tr>
