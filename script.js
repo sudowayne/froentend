@@ -394,6 +394,8 @@ counter.increment();
 counter.logcount();
 counter.decrement();
 counter.logcount();
+counter.decrement()
+counter.logcount()
 
 
 
@@ -457,7 +459,9 @@ const orderDinner = async () => {
     }
 }
 
-orderDinner();  
+// orderDinner();  
+
+
 
 
 
